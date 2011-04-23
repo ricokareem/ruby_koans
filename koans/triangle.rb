@@ -15,6 +15,18 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  a, b, c = [a, b, c].sort
+  fail TriangleError if (a+b) <= c
+  case
+  when (a == b) && (a == c)
+    return :equilateral
+  when (a == b) || (a == c) || (b == c)
+    return :isosceles
+  when (a != b) && (a != c) && (b != c)
+    return :scalene  
+  else
+    puts "no clue, buddy"
+  end  
 end
 
 # Error class used in part 2.  No need to change this code.
