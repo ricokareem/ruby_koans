@@ -7,6 +7,8 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # end
 
 class AboutDiceProject < EdgeCase::Koan
+class DiceSet < AboutDiceProject
+    
   def test_can_create_a_dice_set
     dice = DiceSet.new
     assert_not_nil dice
@@ -59,5 +61,5 @@ class AboutDiceProject < EdgeCase::Koan
     dice.roll(1)
     assert_equal 1, dice.values.size
   end
-
+end
 end
