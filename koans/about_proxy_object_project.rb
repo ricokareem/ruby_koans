@@ -16,6 +16,8 @@ class Proxy
   def initialize(target_object)
     @object = target_object
     # ADD MORE CODE HERE
+    @messages = []
+    
   end
 
   # WRITE CODE HERE
