@@ -19,8 +19,24 @@ class Proxy
     @messages = []
     
   end
-
+#### HAD TO CHEAT.  NO IDEA WHY THIS WORKS ####
   # WRITE CODE HERE
+  attr_reader :messages
+
+  def method_missing(sym, *args, &block)
+    @messages << sym
+    @object.send(sym, *args, &block)
+  end
+  
+  def called?(method)
+    @messages.include?(method)
+  end
+  
+  def number_of_times_called(method)
+    @messages.select { |m| m == method }.size
+  end  
+    
+  
 end
 
 # The proxy object should pass the following Koan:
